@@ -13,16 +13,15 @@ Login With Correct Credentials
 
 Login With Incorrect Password
     Set Username  kalle
-    Set Password  kalle456
+    Set Password  ellak456
     Submit Credentials
     Login Should Fail With Message  Invalid username or password
 
 Login With Nonexistent Username
     Set Username  ellak
-    Set Password  kalle456
+    Set Password  ellak456
     Submit Credentials
     Login Should Fail With Message  Invalid username or password
-    
 
 *** Keywords ***
 Login Should Succeed
