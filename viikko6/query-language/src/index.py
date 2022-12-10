@@ -1,6 +1,6 @@
 from statistics import Statistics
 from player_reader import PlayerReader
-from matchers import And, HasAtLeast, PlaysIn, Not, All, HasFewerThan
+from matchers import And, HasAtLeast, PlaysIn, Not, All, HasFewerThan, Or
 
 
 def main():
@@ -9,8 +9,12 @@ def main():
     stats = Statistics(reader)
 
     matcher = And(
-        Not(HasAtLeast(1, "goals")),
-        PlaysIn("NYR")
+        HasAtLeast(70, "points"),
+        Or(
+            PlaysIn("NYR"),
+            PlaysIn("FLA"),
+            PlaysIn("BOS")
+        )
     )
 
     for player in stats.matches(matcher):
